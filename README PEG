@@ -1,0 +1,41 @@
+# Peg – Terminal Roguelike (C)
+
+Autor: Arnošt Hostomský
+
+## Popis
+Peg je jednoduchá textová hra napsaná v jazyce C, která běží přímo v terminálu.
+Hráč se pohybuje po mapě 10×10, sbírá zlato a je pronásledován nepřáteli,
+kteří se pohybují směrem k hráči.
+
+Hra obsahuje systém skóre, zlata, jednoduchou AI nepřátel
+a speciální schopnost **Shockwave**, která zničí nepřátele v okolí.
+
+---
+
+## Ovládání
+| Klávesa | Akce |
+|--------|------|
+| `W` | Pohyb nahoru |
+| `S` | Pohyb dolů |
+| `A` | Pohyb doleva |
+| `D` | Pohyb doprava |
+| `E` | Shockwave (stojí 5 goldů) |
+| `R` | Restart hry |
+| `Q` | Ukončení |
+
+---
+
+## Herní mechaniky
+- Nepřátelé se pohybují směrem k hráči (jednoduchá AI)
+- Náhodně generovaný cíl (zlato)
+- Skóre a měna (gold)
+- Shockwave: odstraní nepřátele v okruhu 5×5
+- Restart hry bez restartu programu
+
+---
+
+## Spuštění
+
+```bash
+gcc main.c -o peg
+./peg
