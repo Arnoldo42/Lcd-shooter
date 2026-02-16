@@ -23,23 +23,37 @@ int enemyX[MAX_ENEMIES] = {3,7,1};
 int enemyY[MAX_ENEMIES] = {4,0,8};
 //nastavi pozice a gold a skore
 
-//#################################################--FIX--##################################################################
-void restart(){
-    gold=5;
-    score=0;
+int running = 1;
+char status[100] = "";
 
-    goalX=1;
-    goalY=1;
+void restart(){
+    gold = 5;
+    score = 0;
 
     x = 2;
-    y=2;
+    y = 2;
 
     loops = 0;
-    
-    
-    
+    running = 1;
+
+    status[0] = '\0';   // smaže text
+
+    // náhodný gold
+    goalX = rand() % MAP_SIZE;
+    goalY = rand() % MAP_SIZE;
+
+    // náhodní enemy
+    for(int i = 0; i < MAX_ENEMIES; i++){
+        do{
+            enemyX[i] = rand() % MAP_SIZE;
+            enemyY[i] = rand() % MAP_SIZE;
+        }while(
+            (enemyX[i] == x && enemyY[i] == y) ||
+            (enemyX[i] == goalX && enemyY[i] == goalY)
+        );
+    }
 }
-//#########################################################################################################
+
 
 #define RED   "\033[31m"
 #define GREEN "\033[32m"
@@ -49,10 +63,9 @@ void restart(){
 
 
 
-char status[100] = "";
 
 
-int running = 1;
+
 
 
 
@@ -159,7 +172,7 @@ void move(){                                             //POHYB
         case 's': newY++;break;
         case 'a': newX--;break;
         case 'd': newX++;break;
-        case 'r': restart();
+        case 'r': restart();return;
         case'e': shockwave();return;
         case 'q': snprintf(status,sizeof(status),"Man u are useless u have this litlle score %d and u are leaving?!\n", score);
         printf("The last one had this score: %i\n",score*10);
