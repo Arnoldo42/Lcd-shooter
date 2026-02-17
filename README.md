@@ -1,37 +1,40 @@
-# LCD Shooter
-Autor: Arnošt Hostomský
+# Mini Arcade – herní projekty
 
-## Popis
-LCD Shooter je arkádová hra pro Arduino s 16×2 LCD displejem.
-Hráč ovládá loď joystickem, střílí nepřátele a bojuje s bossem.
-Obtížnost se zvyšuje se skóre.
+Tento repozitář obsahuje dva vlastní herní projekty, které jsem vytvořil při učení programování a herní logiky.  
+Slouží jako ukázka mé práce a zájmu o IT a vývoj her.
 
-## Hardware
-- Arduino (UNO / Nano / kompatibilní)
-- LCD 16×2 s I2C (adresa 0x27)
-- Analogový joystick
-- Tlačítko (pin 32)
-- Propojovací vodiče
+---
 
-## Ovládání
-- Joystick nahoru/dolů – pohyb mezi řádky
-- Tlačítko – střelba
+## Projekty
 
-## Funkce
-- Nepřátelé s náhodným spawnem
-- Boss po každých 20 bodech
-- Více vzorů střel bosse
-- Skóre a životy
-- Animace výbuchu
+### 🎮 LCD Shooter (Arduino)
+Akční hra běžící na Arduino s LCD 16×2 displejem.
 
-## Spuštění
-1. Otevři `lcd-shooter.ino` v Arduino IDE  
-2. Připoj Arduino  
-3. Nahraj kód  
-4. Zapoj hardware podle schématu  
+- ovládání joystickem  
+- střelba  
+- nepřátelé a boss  
+- skóre a životy  
 
-## Co bych mohl vylepšit
-- Lepší AI bosse
-- Více typů nepřátel
-- Zvuk
+
+---
+
+### 🧠 PEG (C++ terminálová hra / mini engine)
+Textová hra a základ herního systému běžící v terminálu.
+
+- mapa a pohyb  
+- nepřátelé  
+- kolize  
+- skóre  
+- jednoduchá herní logika  
+
+
+---
+
+## Jak číst tento repozitář
+Každý projekt má vlastní README ve své složce, kde je podrobnější popis a návod ke spuštění.
+
+---
+
+## Autor
+Arnošt Hostomský
 
