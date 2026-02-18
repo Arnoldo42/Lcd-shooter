@@ -6,7 +6,7 @@
 #define MAP_SIZE 10
 #define MAX_ENEMIES 3
 
-int gold = 5;
+int gold = 4;
 int score = 0;
 
 int goalX = 1;
@@ -26,33 +26,7 @@ int enemyY[MAX_ENEMIES] = {4,0,8};
 int running = 1;
 char status[100] = "";
 
-void restart(){
-    gold = 5;
-    score = 0;
 
-    x = 2;
-    y = 2;
-
-    loops = 0;
-    running = 1;
-
-    status[0] = '\0';   // smaže text
-
-    // náhodný gold
-    goalX = rand() % MAP_SIZE;
-    goalY = rand() % MAP_SIZE;
-
-    // náhodní enemy
-    for(int i = 0; i < MAX_ENEMIES; i++){
-        do{
-            enemyX[i] = rand() % MAP_SIZE;
-            enemyY[i] = rand() % MAP_SIZE;
-        }while(
-            (enemyX[i] == x && enemyY[i] == y) ||
-            (enemyX[i] == goalX && enemyY[i] == goalY)
-        );
-    }
-}
 
 
 #define RED   "\033[31m"
@@ -68,7 +42,7 @@ void restart(){
 
 
 
-
+void restart();
 void shockwave();
 int enemyAt();
 int checkDeath();
@@ -279,6 +253,34 @@ void shockwave(){
     }
 }
 
+
+void restart(){
+    gold = 4;
+    score = 0;
+
+    x = 2;
+    y = 2;
+
+    loops = 0;
+    running = 1;
+
+    status[0] = '\0';   // smaže text
+
+    // náhodný gold
+    goalX = rand() % MAP_SIZE;
+    goalY = rand() % MAP_SIZE;
+
+    // náhodní enemy
+    for(int i = 0; i < MAX_ENEMIES; i++){
+        do{
+            enemyX[i] = rand() % MAP_SIZE;
+            enemyY[i] = rand() % MAP_SIZE;
+        }while(
+            (enemyX[i] == x && enemyY[i] == y) ||
+            (enemyX[i] == goalX && enemyY[i] == goalY)
+        );
+    }
+}
 
 //Ještě přidat:
 
